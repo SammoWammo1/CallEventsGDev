@@ -1,0 +1,276 @@
+{
+  "author": "",
+  "category": "Advanced",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Call Events",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHJlY3QgeD0iNCIgeT0iNiIgY2xhc3M9InN0MCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjYiLz4NCjxsaW5lIGNsYXNzPSJzdDAiIHgxPSIxMSIgeTE9IjMiIHgyPSIxMSIgeTI9IjYiLz4NCjxsaW5lIGNsYXNzPSJzdDAiIHgxPSIyMSIgeTE9IjMiIHgyPSIyMSIgeTI9IjYiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yOCwxMkg0djE2aDE5LjhsMC45LTAuOWMyLjEtMi4xLDMuMy01LDMuMy04VjEyeiIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIzLDI4di01aDBjMS42LTAuMiwzLjEtMS4xLDQtMi41bDEtMS41Ii8+DQo8L3N2Zz4NCg==",
+  "name": "CallEvent",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/Line Hero Pack/Master/SVG/UI Essentials/a4c56671c96d4f5f56dbae63ce1fc3cdb7305eac2b1e21f4b55599c7208ba6cb_UI Essentials_calendar.svg",
+  "shortDescription": "Activate Events with Parameters",
+  "version": "1.0.0",
+  "description": "This extension allows you to call Events like Functions in Godot, Unity, and GameMaker.",
+  "tags": [],
+  "authorIds": [
+    "XsWsqeutANX2MbaWJQZ92yKbgS73"
+  ],
+  "dependencies": [],
+  "globalVariables": [
+    {
+      "name": "eventcalled",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "json",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "yettobedone",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "eventscalled",
+      "type": "array",
+      "children": []
+    },
+    {
+      "name": "id",
+      "type": "number",
+      "value": 0
+    }
+  ],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "Call an Event with a name and parameters",
+      "fullName": "Call an Event",
+      "functionType": "Action",
+      "name": "CallEvent",
+      "sentence": "Call Event _PARAM1_ with JSON _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "id",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "yettobedone",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "eventcalled",
+                "=",
+                "Parameter"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "json",
+                "=",
+                "Parameter2"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Event Code",
+          "name": "Parameter",
+          "type": "string"
+        },
+        {
+          "description": "JSON",
+          "longDescription": "This allows you to put in some JSON or converted Arrays or Structures.",
+          "name": "Parameter2",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns JSON data from latest call. Remains the way it was put in.",
+      "fullName": "Latest Event Call JSON data",
+      "functionType": "StringExpression",
+      "name": "LatestCallEventJSON",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnString"
+              },
+              "parameters": [
+                "json"
+              ]
+            }
+          ]
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "If the Event Name was called, this returns successful.",
+      "fullName": "Event Called",
+      "functionType": "Condition",
+      "name": "EventCalled",
+      "sentence": "If _PARAM1_ was called",
+      "events": [
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "Parameter",
+                "=",
+                "eventcalled"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "yettobedone",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "eventcalled",
+                    "=",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "yettobedone",
+                    "False",
+                    "\"\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Event Code",
+          "name": "Parameter",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "onSceneLoaded",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "eventcalled",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "json",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "yettobedone",
+                "False",
+                "\"\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}
